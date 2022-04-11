@@ -8,7 +8,11 @@
    
     <link rel="stylesheet" href="./css/index.css">
 
+
     <script src="./js/index.js" defer></script>
+
+    
+
 
 </head>
 <body>
@@ -170,10 +174,10 @@
             <h2 class="subscribe__title">Подпишись</h2>
             <p class="subscribe__description">Отправляем анонсы новых статей, выпусков и трансляций</p>
             <form class="subscribe__form" action="#">
-                <input type="text" name="email" placeholder="Email">
-                <input type="date" name="date" id="date">
-                <input type="tel" name="phone" placeholder="Телефон">
-                <input type="time" value="15:00">
+                <input required type="text" name="email" placeholder="Email">
+                <input class="mask-date" type="text" name="date" id="date" placeholder="11.02.2022">
+                <input class="mask-phone"  type="tel" name="phone" placeholder="Телефон">
+                <input class="mask-time" type="text" placeholder="15:00">
                 <button onclick="alert('подписка оформлена)')" type="submit">Подписаться</button>
             </form>
         </div>
@@ -202,6 +206,7 @@
         </div>
     </footer>
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery.maskedinput.js" ></script>
 </body>
 </html>
