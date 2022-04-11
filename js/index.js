@@ -77,7 +77,6 @@ let bias = slideWidth == 290 ? 310 : slideWidth
 function Bias(i) {
     counter = counter + i
     sliderWrapper.style.transform = `translateX(${-counter * bias}px)`
-    console.log('counter ', counter)
 }
 
 next.addEventListener('click', () => { //вперед
@@ -121,12 +120,14 @@ function handleTouchMove(e) {
 
 function handleTouchEnd() {
     variable = variable + xDiff
-    if (variable  > 50 && variable  != 0) {
-        counter == -1 ? Bias(0) : Bias(-1)
+    console.log(variable)
+    if (variable  > 50) {
+        counter > -1 ? Bias(-1) : Bias(0)
     }
-    else if (variable < -50 && variable != 0) {
-        counter == 1 ? Bias(0) : Bias(1)
-    }  
+    else if (variable < -50) {
+        counter < 1 ? Bias(1) : Bias(0)
+    }
+
 
 }
 
