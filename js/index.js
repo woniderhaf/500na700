@@ -28,6 +28,7 @@ li.forEach((item, i) => {
 
         //появление меню
         if (activePar == i+1 || activePar == 0 || !menu.classList.contains('header__menu-active')) {
+            menuContent.style.display = 'flex'
             menu.classList.toggle('header__menu-active') // двигает весь блок контента
             window.screen.width > 562 ? menu.classList.contains('header__menu-active') ? body.classList.add('body__active') : body.classList.remove('body__active') : null // делаем  1 условие,чтобы при появлении бургера при клике на li не менялся фон
             if (menuContent.style.opacity == '1') {
@@ -145,8 +146,9 @@ questions.forEach((ques, i) => {
             window.screen.width < 600 && answers[i].textContent.length < 50 ? ques.style.paddingBottom = '60px' : null
             window.screen.width < 562 && answers[i].textContent.length < 50 ? ques.style.paddingBottom = '20px' : null
 
-            window.screen.width < 517 && answers[i].textContent.length < 50 ? ques.style.paddingBottom = '80px' : null
             window.screen.width < 517 && answers[i].textContent.length > 50 ? ques.style.paddingBottom = '80px' : ques.style.paddingBottom = '15px'
+            window.screen.width < 517 && answers[i].textContent.length < 50 ? ques.style.paddingBottom = '80px' : null
+
             
             answers[i].style.opacity = '0'
 
@@ -228,5 +230,6 @@ burger.addEventListener('click', () => {
         li.forEach(item => item.style.marginBottom = '0px');
         activePar = 0
         menu.classList.remove('header__menu-active')
+        menuContent.style.display = 'none'
     } 
 })
